@@ -2,7 +2,7 @@
 #include <cstdio>
 #include <cstdarg>
 
-// Функция print: Выводит форматированную строку с переменным числом аргументов
+
 void print(const char* format, ...) {
     va_list args;
     va_start(args, format);
@@ -11,7 +11,31 @@ void print(const char* format, ...) {
     printf("\n");
     va_end(args);
 }
+
+int secion_1() {
+    print("secion 1:");
+
+    int value = getchar();
+    print("%d", value);
+    return value;
+}
+void secion_2(int ch) {
+    print("secion 2:");
+
+    putchar(ch);
+}
+void secion_3() {
+    print("secion 3:");
+
+    int value1 = getchar();
+    int value2 = getchar();
+    print("%c %c", value1, value2);
+}
+
 int main()
 {
-    std::cout << "Hello World!\n";
+    int ch = secion_1();
+    secion_2(ch);
+    secion_3();
+    return 0;
 }
